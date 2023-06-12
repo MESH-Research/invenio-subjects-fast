@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "invenio-subjects-fast"
-version = "2023.06.12"
+version = "2023.06.13"
 description = "Provides the FAST faceted subject vocabulary for InvenioRDM"
 readme = "README.md"
 authors = [{ name = "MESH Research", email = "scottia4@msu.edu" }]

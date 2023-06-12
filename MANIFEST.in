@@ -17,6 +17,8 @@ recursive-exclude tests .DS_Store
 recursive-exclude invenio_subjects_fast .DS_Store
 include tests/data/*.marcxml.zip
 exclude tests/downloads/*.marcxml.zip
+recursive-include tests .gitkeep
+recursive-include invenio_subjects_fast .gitkeep
 
 # added by check-manifest
 include *.lock

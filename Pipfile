@@ -17,6 +17,7 @@ responses = ">=0.23.1"
 pyyaml = ">=5.4.1"
 pip-tools = "*"
 check-manifest = "*"
+twine = "*"
 
 [requires]
 python_version = ">=3.9"

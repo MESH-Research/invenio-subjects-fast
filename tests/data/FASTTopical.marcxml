@@ -1,0 +1,119 @@
+<mx:collection  xmlns:mx="http://www.loc.gov/MARC21/slim" xmlns="http://www.w3.org/TR/xhtml1/strict">
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00435760</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20220916144009.0</mx:controlfield>
+<mx:controlfield tag="008">040924nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00435760</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/435760</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="150" ind1=" " ind2=" ">
+<mx:subfield code="a">Aparecida, Nossa Senhora</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="450" ind1=" " ind2=" ">
+<mx:subfield code="a">Conceição Aparecida, Nossa Senhora de</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="450" ind1=" " ind2=" ">
+<mx:subfield code="a">Nossa Senhora Aparecida</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="450" ind1=" " ind2=" ">
+<mx:subfield code="a">Nossa Senhora da Conceição Aparecida</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="450" ind1=" " ind2=" ">
+<mx:subfield code="a">Our Lady of Aparecida</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="500" ind1="0" ind2=" ">
+<mx:subfield code="a">Mary,</mx:subfield>
+<mx:subfield code="c">Blessed Virgin, Saint</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst00068107</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="550" ind1=" " ind2=" ">
+<mx:subfield code="a">Miracles</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst01023535</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="551" ind1=" " ind2=" ">
+<mx:subfield code="a">Brazil</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst01206830</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="550" ind1=" " ind2=" ">
+<mx:subfield code="a">Devotion to the Blessed Virgin Mary</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst01352703</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 5</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 26</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="750" ind1=" " ind2="0">
+<mx:subfield code="a">Aparecida, Nossa Senhora</mx:subfield>
+<mx:subfield code="0">(DLC)sh2012001440</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00537821</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20201105115235.0</mx:controlfield>
+<mx:controlfield tag="008">050513nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00537821</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/537821</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="150" ind1=" " ind2=" ">
+<mx:subfield code="a">Quantum systems</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="550" ind1=" " ind2=" ">
+<mx:subfield code="w">g</mx:subfield>
+<mx:subfield code="a">Quantum theory</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst01085128</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="550" ind1=" " ind2=" ">
+<mx:subfield code="w">g</mx:subfield>
+<mx:subfield code="a">System theory</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst01141423</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 8</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 199</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="750" ind1=" " ind2="0">
+<mx:subfield code="a">Quantum systems</mx:subfield>
+<mx:subfield code="0">(DLC)sh2013002642</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="750" ind1=" " ind2="4">
+<mx:subfield code="a">Quantum system</mx:subfield>
+<mx:subfield code="4">RM</mx:subfield>
+<mx:subfield code="0">http://en.wikipedia.org/wiki/Quantum_system</mx:subfield>
+<mx:subfield code="0">https://www.wikidata.org/wiki/Q21193136</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+</mx:collection>

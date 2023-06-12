@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+invenio-subjects-fast = {editable = true, path = "."}
+requests = "*"
+pytest = "*"
+halo = "*"
+tqdm = "*"
+requests-mock = "*"
+responses = "*"
+click = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

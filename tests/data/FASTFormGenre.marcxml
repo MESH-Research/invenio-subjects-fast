@@ -1,0 +1,34 @@
+<mx:collection  xmlns:mx="http://www.loc.gov/MARC21/slim" xmlns="http://www.w3.org/TR/xhtml1/strict">
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst01411628</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20080306133600.0</mx:controlfield>
+<mx:controlfield tag="008">060714n| anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst01411628</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/1411628</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="155" ind1=" " ind2=" ">
+<mx:subfield code="a">History</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 1,055,629</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 12,403,354</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+</mx:collection>

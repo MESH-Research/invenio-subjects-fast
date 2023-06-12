@@ -1,0 +1,76 @@
+<mx:collection  xmlns:mx="http://www.loc.gov/MARC21/slim" xmlns="http://www.w3.org/TR/xhtml1/strict">
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00511885</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20200414165542.0</mx:controlfield>
+<mx:controlfield tag="008">050513nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00511885</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/511885</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="111" ind1="2" ind2=" ">
+<mx:subfield code="a">Jacobsen-McGill Arctic Research Expedition</mx:subfield>
+<mx:subfield code="d">(1959-1962)</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="368" ind1=" " ind2=" ">
+<mx:subfield code="a">Conference</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="2" ind2=" ">
+<mx:subfield code="a">McGill University.</mx:subfield>
+<mx:subfield code="b">Department of Geography.</mx:subfield>
+<mx:subfield code="b">Jacobsen-McGill Arctic Research Expedition</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">Jacobsen-McGill Arctic Research Expedition</mx:subfield>
+<mx:subfield code="w">nne</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">Axel Heiberg Expedition</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">Axel Heiberg Island Expedition of McGill University</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">Jacobsen-McGill Expedition</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">Jacobsen-McGill Expeditions</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">McGill Axel Heiberg Expeditions</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="411" ind1="2" ind2=" ">
+<mx:subfield code="a">McGill Expeditions</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 0</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 15</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="711" ind1="2" ind2="0">
+<mx:subfield code="a">Jacobsen-McGill Arctic Research Expedition</mx:subfield>
+<mx:subfield code="d">(1959-1962)</mx:subfield>
+<mx:subfield code="0">(DLC)n  50036468</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="711" ind1="2" ind2="0">
+<mx:subfield code="a">Jacobsen-McGill Arctic Research Expedition</mx:subfield>
+<mx:subfield code="d">(1959-1962)</mx:subfield>
+<mx:subfield code="0">(viaf)133101378</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/133101378</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+</mx:collection>

@@ -1,0 +1,175 @@
+<mx:collection  xmlns:mx="http://www.loc.gov/MARC21/slim" xmlns="http://www.w3.org/TR/xhtml1/strict">
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00511521</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20190731132057.0</mx:controlfield>
+<mx:controlfield tag="008">130415nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00511521</mx:subfield>
+<mx:subfield code="z">fst01715347</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/511521</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="043" ind1=" " ind2=" ">
+<mx:subfield code="a">n-us-nc</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="151" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Band of Cherokee Indians</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="2" ind2=" ">
+<mx:subfield code="a">Eastern Band of Cherokee Indians of North Carolina</mx:subfield>
+<mx:subfield code="w">nne</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Carolina Cherokees</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Cherokee Tribe of North Carolina</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Cherokees of Carolina</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Cherokees Residing in the State of North Carolina</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">E.B.C.I.</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Band of Cherokee Indians of North Carolina</mx:subfield>
+<mx:subfield code="w">nne</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Band of Cherokee Nation</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Band of Cherokees</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Band of Cherokees of North Carolina</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Band of the Cherokee Nation</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Cherokees</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">Eastern Cherokees of North Carolina</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">EBCI</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">North Carolina Cherokees</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 10</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 280</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="751" ind1=" " ind2="0">
+<mx:subfield code="a">Eastern Band of Cherokee Indians</mx:subfield>
+<mx:subfield code="0">(DLC)n  50024398 </mx:subfield>
+</mx:datafield>
+<mx:datafield tag="751" ind1=" " ind2="0">
+<mx:subfield code="a">Eastern Band of Cherokee Indians</mx:subfield>
+<mx:subfield code="0">(viaf)130152017</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/130152017</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00528551</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20200423102940.0</mx:controlfield>
+<mx:controlfield tag="008">050513nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00528551</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/528551</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="043" ind1=" " ind2=" ">
+<mx:subfield code="a">e-uk-en</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="151" ind1=" " ind2=" ">
+<mx:subfield code="a">England</mx:subfield>
+<mx:subfield code="z">RAF Shawbury</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="368" ind1=" " ind2=" ">
+<mx:subfield code="b">Air bases</mx:subfield>
+<mx:subfield code="2">lcsh</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="370" ind1=" " ind2=" ">
+<mx:subfield code="c">Great Britain</mx:subfield>
+<mx:subfield code="c">England</mx:subfield>
+<mx:subfield code="e">Shawbury (England)</mx:subfield>
+<mx:subfield code="2">naf</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="372" ind1=" " ind2=" ">
+<mx:subfield code="a">Aeronautics, Military--Study and teaching</mx:subfield>
+<mx:subfield code="a">Air forces</mx:subfield>
+<mx:subfield code="2">lcsh</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="1" ind2=" ">
+<mx:subfield code="a">Great Britain.</mx:subfield>
+<mx:subfield code="b">RAF Shawbury</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="1" ind2=" ">
+<mx:subfield code="a">Great Britain.</mx:subfield>
+<mx:subfield code="b">Royal Air Force.</mx:subfield>
+<mx:subfield code="b">RAF Shawbury</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="1" ind2=" ">
+<mx:subfield code="a">Great Britain.</mx:subfield>
+<mx:subfield code="b">Royal Air Force Station, Shawbury</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="2" ind2=" ">
+<mx:subfield code="a">Royal Air Force Station, Shawbury, Eng.</mx:subfield>
+<mx:subfield code="w">nne</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="451" ind1=" " ind2=" ">
+<mx:subfield code="a">England</mx:subfield>
+<mx:subfield code="z">Royal Air Force Shawbury</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 1</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 3</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="751" ind1=" " ind2="0">
+<mx:subfield code="a">RAF Shawbury (England)</mx:subfield>
+<mx:subfield code="0">(DLC)n  78089423</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="751" ind1=" " ind2="0">
+<mx:subfield code="a">RAF Shawbury (England)</mx:subfield>
+<mx:subfield code="0">(viaf)123137998</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/123137998</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+</mx:collection>

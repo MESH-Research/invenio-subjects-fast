@@ -1,0 +1,106 @@
+<mx:collection  xmlns:mx="http://www.loc.gov/MARC21/slim" xmlns="http://www.w3.org/TR/xhtml1/strict">
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00131392</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20120706140721.0</mx:controlfield>
+<mx:controlfield tag="008">040924nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00131392</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/131392</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="110" ind1="2" ind2=" ">
+<mx:subfield code="a">Seiyū, Kabushiki Kaisha</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 1</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 5</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="710" ind1="2" ind2="0">
+<mx:subfield code="a">Seiyū, Kabushiki Kaisha</mx:subfield>
+<mx:subfield code="0">(DLC)n  84083531 </mx:subfield>
+</mx:datafield>
+<mx:datafield tag="710" ind1="2" ind2="0">
+<mx:subfield code="a">Seiyū, Kabushiki Kaisha</mx:subfield>
+<mx:subfield code="0">(viaf)8785134</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/8785134</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00236604</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20201105115235.0</mx:controlfield>
+<mx:controlfield tag="008">040924nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00236604</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/236604</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="110" ind1="2" ind2=" ">
+<mx:subfield code="a">Bratří Čapkové</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="400" ind1="1" ind2=" ">
+<mx:subfield code="a">Čapkové,</mx:subfield>
+<mx:subfield code="c">Bratří</mx:subfield>
+<mx:subfield code="w">nne</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="2" ind2=" ">
+<mx:subfield code="a">Brothers Čapek</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="500" ind1="1" ind2=" ">
+<mx:subfield code="w">r</mx:subfield>
+<mx:subfield code="i">Member:</mx:subfield>
+<mx:subfield code="a">Čapek, Josef,</mx:subfield>
+<mx:subfield code="d">1887-1945</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst00010952</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="500" ind1="1" ind2=" ">
+<mx:subfield code="w">r</mx:subfield>
+<mx:subfield code="i">Member</mx:subfield>
+<mx:subfield code="a">Čapek, Karel,</mx:subfield>
+<mx:subfield code="d">1890-1938</mx:subfield>
+<mx:subfield code="0">(OCoLC)fst00011883</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 0</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 3</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="710" ind1="2" ind2="0">
+<mx:subfield code="a">Bratří Čapkové</mx:subfield>
+<mx:subfield code="0">(DLC)n  88092947</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="710" ind1="2" ind2="0">
+<mx:subfield code="a">Bratří Čapkové</mx:subfield>
+<mx:subfield code="0">(viaf)75401278</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/75401278</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+</mx:collection>

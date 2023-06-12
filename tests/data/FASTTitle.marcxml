@@ -1,0 +1,126 @@
+<mx:collection  xmlns:mx="http://www.loc.gov/MARC21/slim" xmlns="http://www.w3.org/TR/xhtml1/strict">
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00395592</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20120706140721.0</mx:controlfield>
+<mx:controlfield tag="008">040924nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00395592</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/395592</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="130" ind1=" " ind2="0">
+<mx:subfield code="a">Moamin</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="400" ind1="1" ind2=" ">
+<mx:subfield code="a">Bayzār, Muhammad Ibn ʻAbd Allāh</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="400" ind1="0" ind2=" ">
+<mx:subfield code="a">Muhammad Ibn ʻAbd Allāh al-Bayzār</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Kitāb al-ǧawāriḥ</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Kitāb al-Mutawakkilī</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Livre de Moamin</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Libro de li falconi et altri ucelli de rapina</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Libro que es fecho de las animalias que caçan</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Libro de los animales que cazan</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Kitāb al-Jawāriḥ</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Kitāb al-Ŷawāriḥ</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Liber de scientia venandi per aves et quadrupedes</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Liber Moamini falconarii de scientia venandi per aves et quadrupedes</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="430" ind1=" " ind2="0">
+<mx:subfield code="a">Book of Moamin</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 0</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 8</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="730" ind1=" " ind2="0">
+<mx:subfield code="a">Moamin</mx:subfield>
+<mx:subfield code="0">(DLC)n  97078897 </mx:subfield>
+</mx:datafield>
+<mx:datafield tag="730" ind1=" " ind2="0">
+<mx:subfield code="a">Moamin</mx:subfield>
+<mx:subfield code="0">(viaf)195835192</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/195835192</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+<mx:record>
+
+<mx:leader>00000cz  a2200037n  45 0</mx:leader>
+<mx:controlfield tag="001">fst00531925</mx:controlfield>
+<mx:controlfield tag="003">OCoLC</mx:controlfield>
+<mx:controlfield tag="005">20120706140721.0</mx:controlfield>
+<mx:controlfield tag="008">050513nn anznnbabn          || ana     d</mx:controlfield>
+<mx:datafield tag="016" ind1="7" ind2=" ">
+<mx:subfield code="a">fst00531925</mx:subfield>
+<mx:subfield code="2">OCoLC</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="024" ind1="7" ind2=" ">
+<mx:subfield code="a">http://id.worldcat.org/fast/531925</mx:subfield>
+<mx:subfield code="2">uri</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="040" ind1=" " ind2=" ">
+<mx:subfield code="a">OCoLC</mx:subfield>
+<mx:subfield code="b">eng</mx:subfield>
+<mx:subfield code="c">OCoLC</mx:subfield>
+<mx:subfield code="f">fast</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="130" ind1=" " ind2="0">
+<mx:subfield code="a">Morgenavisen</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="410" ind1="2" ind2=" ">
+<mx:subfield code="a">Morgenavisen, Bergen, Norway</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">LC (2022) Subject Usage: 0</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="688" ind1=" " ind2=" ">
+<mx:subfield code="a">WC (2022) Subject Usage: 0</mx:subfield>
+</mx:datafield>
+<mx:datafield tag="730" ind1=" " ind2="0">
+<mx:subfield code="a">Morgenavisen</mx:subfield>
+<mx:subfield code="0">(DLC)n  79043844 </mx:subfield>
+</mx:datafield>
+<mx:datafield tag="730" ind1=" " ind2="0">
+<mx:subfield code="a">Morgenavisen</mx:subfield>
+<mx:subfield code="0">(viaf)174983378</mx:subfield>
+<mx:subfield code="0">https://viaf.org/viaf/174983378</mx:subfield>
+</mx:datafield>
+
+</mx:record>
+</mx:collection>

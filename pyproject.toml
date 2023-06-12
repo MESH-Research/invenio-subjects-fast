@@ -28,16 +28,29 @@ requires-python = ">=3.9"
 
 [project.optional-dependencies]
 dev = [
+    "check-manifest",
     "halo~=0.0.31",
+    "pip-tools",
     "pytest>=7.3.2",
+    "pytest-runner",
     "pyyaml>=5.4.1",
     "requests>=2.25.1",
     "responses>=0.23.1",
     "tqdm>=4.65.0"
 ]
 
+
 [project.urls]
 Homepage = "https://github.com/MESH-Research/invenio-subjects-fast"
 
+
+[tool.pytest.ini_options]
+addopts = "--doctest-glob='*.rst' --doctest-modules"
+testpaths = [ "tests", "invenio_subjects_fast" ]
+
 [project.scripts]
 invenio-subjects-fast = "invenio_subjects_fast.cli:cli"
+
+[project.entry-points."invenio_rdm_records.fixtures"]
+invenio_subjects_fast = "invenio_subjects_fast.vocabularies"
+

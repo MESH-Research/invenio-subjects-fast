@@ -15,6 +15,8 @@ include .gitignore
 exclude .DS_Store
 recursive-exclude tests .DS_Store
 recursive-exclude invenio_subjects_fast .DS_Store
+include tests/data/*.marcxml.zip
+exclude tests/downloads/*.marcxml.zip
 
 # added by check-manifest
 include *.lock
@@ -27,7 +29,6 @@ recursive-include invenio_subjects_fast *.py
 recursive-include invenio_subjects_fast *.yaml
 recursive-include tests *.lock
 recursive-include tests *.py
-recursive-include tests *.zip
 
 # added by check-manifest
 recursive-include tests *.lock

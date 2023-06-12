@@ -51,7 +51,7 @@ coverage.xml
 tests/vocabularies/*
 !tests/vocabularies/.gitkeep
 tests/downloads/*.marcxml
-tests/downloads/*.zip
+tests/downloads/*.marcxml.zip
 !tests/downloads/.gitkeep
 
 # Translations

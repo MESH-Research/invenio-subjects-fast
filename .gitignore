@@ -68,8 +68,7 @@ target/
 # Only keep the downloads folder
 invenio_subjects_fast/downloads/*
 !invenio_subjects_fast/downloads/.gitkeep
-tests/downloads/*
-!tests/downloads/.gitkeep
 
 # Macos finder files
 .DS_Store
+__MACOSX

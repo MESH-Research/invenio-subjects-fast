@@ -20,7 +20,8 @@ install_requires = [
 tests_require = [
     'pytest>=7.3.2',
     'responses>=0.23.1',
-    'pyyaml>=5.4.1'
+    'pyyaml>=5.4.1',
+    'pytest-runner'
 ]
 
 dev_requires = [

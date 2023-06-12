@@ -13,8 +13,8 @@
 
 include .gitignore
 exclude .DS_Store
-exclude tests/.DS_Store
-exclude tests/data/.DS_Store
+recursive-exclude tests .DS_Store
+recursive-exclude invenio_subjects_fast .DS_Store
 
 # added by check-manifest
 include *.lock

@@ -1,3 +1,43 @@
 [build-system]
 requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta:__legacy__"
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "invenio-subjects-fast"
+version = "2023.06.12"
+description = "Provides the FAST faceted subject vocabulary for InvenioRDM"
+readme = "README.md"
+authors = [{ name = "MESH Research", email = "scottia4@msu.edu" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+keywords = ["invenio", "inveniordm", "subjects", "FAST"]
+dependencies = [
+    "click>=7.0"
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = [
+    "halo~=0.0.31",
+    "pytest>=7.3.2",
+    "pyyaml>=5.4.1",
+    "requests>=2.25.1",
+    "responses>=0.23.1",
+    "tqdm>=4.65.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/MESH-Research/invenio-subjects-fast"
+
+[project.scripts]
+invenio-subjects-fast = "invenio_subjects_fast.cli:cli"

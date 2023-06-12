@@ -8,14 +8,9 @@
 
 """Test MeSH extractor."""
 
-from collections import namedtuple
-from contextlib import contextmanager
 import os
 from pathlib import Path
-from pprint import pprint
-import pytest
 import responses
-from unittest import mock
 
 from invenio_subjects_fast.converter import convert_to_yaml
 from invenio_subjects_fast.downloader import download_marcxml_files

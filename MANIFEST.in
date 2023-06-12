@@ -11,6 +11,21 @@
 #
 #  check-manifest -u
 
-include .dockerignore
-include .editorconfig
-recursive-include .github/workflows *.yml
+include .gitignore
+
+# added by check-manifest
+include *.lock
+include *.md
+include *.rst
+include *.sh
+include Pipfile
+recursive-include invenio_subjects_fast *.DS_Store
+recursive-include invenio_subjects_fast *.py
+recursive-include invenio_subjects_fast *.yaml
+recursive-include tests *.DS_Store
+recursive-include tests *.lock
+recursive-include tests *.py
+recursive-include tests *.zip
+
+# added by check-manifest
+recursive-include tests *.lock

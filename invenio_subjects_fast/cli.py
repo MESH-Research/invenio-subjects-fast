@@ -9,6 +9,7 @@
 import click
 from invenio_subjects_fast.downloader import download_marcxml_files
 from invenio_subjects_fast.converter import convert_to_yaml
+from pathlib import Path
 
 """
 A Script and command line interface for producing an InvenioRDM vocabulary file from the FAST subject vocabulary marcxml files.
@@ -37,7 +38,8 @@ def convert_marcxml():
     """
     Convert the downloaded FAST marcxml files to a yaml vocabulary file
     """
-    convert_to_yaml()
+    convert_to_yaml(source_dir=Path(__file__).parent / "downloads",
+                    target_dir=Path(__file__).parent / "vocabularies")
 
 
 

@@ -13,16 +13,20 @@ from setuptools import find_packages, setup
 readme = open('README.md').read()
 history = open('CHANGES.md').read()
 
+install_requires = [
+    'click>=7.0',
+]
+
 tests_require = [
-    'pytest-invenio>=1.4.0',
+    'pytest>=7.3.2',
+    'responses>=0.23.1',
+    'pyyaml>=5.4.1'
 ]
 
 dev_requires = [
-    'click>=7.0',
-    'pyyaml>=5.4.1',
+    'halo~=0.0.31',
     'requests>=2.25.1',
-    'tqdm~=4.65.0',
-    'halo~=0.0.31'
+    'tqdm~=4.65.0'
 ]
 
 extras_require = {
@@ -34,7 +38,8 @@ extras_require['all'] = []
 for reqs in extras_require.values():
     extras_require['all'].extend(reqs)
 
-packages = find_packages()
+packages = find_packages(include=['invenio-subjects-fast',
+                                  'invenio-subjects-fast.*'])
 
 setup(
     name='invenio-subjects-fast',
@@ -44,14 +49,15 @@ setup(
     keywords='invenio inveniordm subjects FAST',
     license='MIT',
     author='MESH Research',
-    author_email='DL_FSM_GDS@e.northwestern.edu',
+    author_email='scottia4@msu.edu',
     url='https://github.com/MESH-Research/invenio-subjects-fast',
     packages=packages,
-    zip_safe=False,
     include_package_data=True,
     platforms='any',
+    install_requires=install_requires,
     extras_require=extras_require,
     tests_require=tests_require,
+    setup_requires=['pytest-runner'],
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',

@@ -48,6 +48,11 @@ coverage.xml
 
 # Other pytest files
 .pytest_cache
+tests/vocabularies/*
+!tests/vocabularies/.gitkeep
+tests/downloads/*.marcxml
+tests/downloads/*.zip
+!tests/downloads/.gitkeep
 
 # Translations
 *.mo

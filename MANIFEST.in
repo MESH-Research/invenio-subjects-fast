@@ -12,12 +12,16 @@
 #  check-manifest -u
 
 include .gitignore
+exclude .DS_Store
+exclude tests/.DS_Store
+exclude tests/data/.DS_Store
 
 # added by check-manifest
 include *.lock
 include *.md
 include *.rst
 include *.sh
+include *.txt
 include Pipfile
 recursive-include invenio_subjects_fast *.py
 recursive-include invenio_subjects_fast *.yaml

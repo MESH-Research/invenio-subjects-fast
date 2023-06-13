@@ -39,8 +39,8 @@ extras_require['all'] = []
 for reqs in extras_require.values():
     extras_require['all'].extend(reqs)
 
-packages = find_packages(include=['invenio-subjects-fast',
-                                  'invenio-subjects-fast.*'])
+packages = find_packages(include=['invenio_subjects_fast',
+                                  'invenio_subjects_fast.*'])
 
 setup(
     name='invenio-subjects-fast',

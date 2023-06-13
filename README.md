@@ -21,7 +21,10 @@ The package will automatically provide the entry points for InvenioRDM to regist
 
     pipenv run invenio rdm-records fixtures
 
-**Note that this indexing will take several minutes**, during which time the terminal process will simply read "Creating required fixtures..." This should eventually be followed by "Created required fixtures!" But the indexing process for such a large set of vocabulary files is very slow.
+**Note that this fixture creation will take quite a few minutes**, and on lower-powered processors may take more than half and hour. During this time the terminal process will simply read "Creating required fixtures..." This should eventually be followed by "Created required fixtures!" But the indexing process for such a large set of vocabulary files is very slow.
+
+**The vocabulary terms will not be available for some time** even after the fixtures have been created and you receive the "Created required fixtures!" message. This is because the indexing of each vocabulary term is delegated to a RabbitMQ task to be performed in due course by a celery worker. It may take an hour or more for celery to complete all of these queued tasks. Once the queue has completed, though, the FAST terms will appear as suggestions in the subject field of the deposit form.
+
 
 ## Updating the vocabulary
 

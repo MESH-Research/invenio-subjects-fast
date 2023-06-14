@@ -4,36 +4,36 @@ subjects:
     - id: FAST-chronological
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_chronological.yaml
+      data-file: subjects_fast_chronological.jsonl
     - id: FAST-corporate
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_corporate.yaml
+      data-file: subjects_fast_corporate.jsonl
     - id: FAST-event
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_event.yaml
+      data-file: subjects_fast_event.jsonl
     - id: FAST-formgenre
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_formgenre.yaml
+      data-file: subjects_fast_formgenre.jsonl
     - id: FAST-geographic
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_geographic.yaml
+      data-file: subjects_fast_geographic.jsonl
     - id: FAST-meeting
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_meeting.yaml
+      data-file: subjects_fast_meeting.jsonl
     - id: FAST-personal
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_personal.yaml
+      data-file: subjects_fast_personal.jsonl
     - id: FAST-title
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_title.yaml
+      data-file: subjects_fast_title.jsonl
     - id: FAST-topical
       name: Faceted Application of Subject Terminology
       uri: "https://www.loc.gov/catworkshop/FAST/index.html"
-      data-file: subjects_fast_topical.yaml
+      data-file: subjects_fast_topical.jsonl

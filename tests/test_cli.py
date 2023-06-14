@@ -8,11 +8,12 @@
 
 """Test MeSH extractor."""
 
+import jsonlines
 import os
 from pathlib import Path
 import responses
 
-from invenio_subjects_fast.converter import convert_to_yaml
+from invenio_subjects_fast.converter import convert_to_jsonl
 from invenio_subjects_fast.downloader import download_marcxml_files
 
 # Helpers
@@ -71,7 +72,7 @@ def test_downloader():
 def test_converter():
     source_dir = Path(__file__).parent / "downloads"
     target_dir = Path(__file__).parent / "vocabularies"
-    assert convert_to_yaml(source_dir=source_dir, target_dir=target_dir)
+    assert convert_to_jsonl(source_dir=source_dir, target_dir=target_dir)
 
     names = [
         'personal',
@@ -85,15 +86,16 @@ def test_converter():
         'meeting'
     ]
     for n in names:
-        assert os.path.exists(f'{target_dir}/subjects_fast_{n}.yaml')
-    with open(f'{target_dir}/subjects_fast_personal.yaml', 'r') as p:
-        expected_lines = ['- id: "http://id.worldcat.org/fast/1"\n',
-                          '  scheme: FAST-personal\n',
-                          '  subject: "1:Mizner, Addison, 1872-1933"\n',
-                          '- id: "http://id.worldcat.org/fast/2"\n',
-                          '  scheme: FAST-personal\n',
-                          '  subject: "2:Thatcher, Margaret"\n'
+        assert os.path.exists(f'{target_dir}/subjects_fast_{n}.jsonl')
+    with jsonlines.open(f'{target_dir}/subjects_fast_personal.jsonl', 'r') as p:
+        expected_lines = [{'id': "http://id.worldcat.org/fast/1",
+                           'scheme': "FAST-personal",
+                           'subject': "Mizner, Addison, 1872-1933"
+                           },
+                          {'id': "http://id.worldcat.org/fast/2",
+                           'scheme': "FAST-personal",
+                           'subject': "2:Thatcher, Margaret"
+                           }
                           ]
-        actual_lines = p.readlines()
-        for idx, l in enumerate(expected_lines):
-            assert actual_lines[idx] == l
+        for idx, l in enumerate(p):
+            assert l == expected_lines[idx]

@@ -23,7 +23,7 @@ faster for InvenioRDM to read than are yaml files.
 
 Escaping
 
-In the converted jsonl file double quotes (") are escaped with a backslash (\"). Single backslashes followed by a letter are also escaped (\\) so that the Invenio importer does not try to interpret the slash and following letter as a control character.
+In the converted jsonl file double quotes (") are escaped with a backslash (\"). Single backslashes followed by a letter are also escaped (\\) so that the Invenio importer does not try to interpret the slash and following letter as a control character. (This escaping is done by the jsonlines writer.)
 """
 
 def convert_to_jsonl(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
@@ -58,8 +58,8 @@ def convert_to_jsonl(source_dir:Optional[str], target_dir:Optional[str]) -> bool
     for idx, source_path in enumerate(source_paths):
         print(f'\nConverting {slugs[idx]} vocabulary to Invenio jsonl format')
         with jsonlines.open(f'{target_folder}/subjects_fast_'
-                             '{slugs[idx].lower()}.jsonl',
-                            "a") as target_file:
+                            f'{slugs[idx].lower()}.jsonl',
+                            "w") as target_file:
             with open(source_path, "rb") as source_file:
                 # print('\nParsing FAST marcxml file (This may take a while!)')
                 spinner = Halo(text='    parsing FAST marcxml file (This may take a while!)', spinner='dots')
@@ -76,9 +76,9 @@ def convert_to_jsonl(source_dir:Optional[str], target_dir:Optional[str]) -> bool
                 for r in trange(len(records)):
                     record = records[r]
                     # pprint([r for r in record])
-                    id_num = record.find(f"./{mx}controlfield[@tag='001']")
-                    id_num = id_num.text
-                    id_num = re.sub(r'fst[0]*', '', id_num)
+                    # id_num = record.find(f"./{mx}controlfield[@tag='001']")
+                    # id_num = id_num.text
+                    # id_num = re.sub(r'fst[0]*', '', id_num)
 
                     uri_field_parent = record.find(
                         f'./{mx}datafield[@tag="024"]'
@@ -116,18 +116,16 @@ def convert_to_jsonl(source_dir:Optional[str], target_dir:Optional[str]) -> bool
                         else:
                             pprint('BAD CODE COMBINATION')
                             pprint(facets[facet_num])
-                            pprint(id_num)
+                            pprint(uri)
                             pprint([f.get('code') for f in label_fields])
                     else:
                         label = label_fields[0].text
-                    # escape quotation marks
-                    label = label.replace('"', '\\"')
-                    label = re.sub(r'\\([a-z A-Z])', r'\\\\1', label)
-                    # full_label = f'{label}--{id_num}'
-                    # myline = f'- id: "{uri}"\n  scheme: FAST-{facets[facet_num]}\n  subject: "{full_label}"\n'
+                    # escape quotation marks and slashes (now done by jsonlines)
+                    # label = label.replace('"', '\\"')
+                    # label = re.sub(r'\\([a-z A-Z])', r'\\\\1', label)
                     myline = {'id': uri,
                               'scheme': f'FAST-{facets[facet_num]}',
-                              'subject': f'{label}--{id_num}'
+                              'subject': f'{label}'
                     }
                     target_file.write(myline)
                 print(f'finished writing this facet to its jsonl file: '

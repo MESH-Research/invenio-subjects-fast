@@ -25,16 +25,19 @@ The package will automatically provide the entry points for InvenioRDM to regist
 
 **The vocabulary terms will not be available for some time** even after the fixtures have been created and you receive the "Created required fixtures!" message. This is because the indexing of each vocabulary term is delegated to a RabbitMQ task to be performed in due course by a celery worker. It may take an hour or more for celery to complete all of these queued tasks. Once the queue has completed, though, the FAST terms will appear as suggestions in the subject field of the deposit form.
 
+## Vocabulary file format
+
+The official InvenioRDM documentation recommends yaml files for custom vocabularies. This file format is quite slow, though, for InvenioRDM to ingest. So this module instead provides jsonl formatted files.
 
 ## Updating the vocabulary
 
-The invenio-subjects-fast package includes a preconfigured set of Invenio vocabulary files in yaml format. You can, however, download and compile updated FAST source files for yourself. First, from your Invenio instance directory, run
+The invenio-subjects-fast package includes a preconfigured set of Invenio vocabulary files in jsonl format. You can, however, download and compile updated FAST source files for yourself. First, from your Invenio instance directory, run
 
     pipenv run invenio-subjects-fast download
 
 This will download the nine separate vocabulary facets from the FAST project's download page as marcxml files (https://www.oclc.org/research/areas/data-science/fast/download.html).
 
-To convert these to Invenio's subject yaml format, run
+To convert these to Invenio's subject jsonl format, run
 
     pipenv run invenio-subjects-fast convert
 
@@ -73,4 +76,4 @@ This repository follows [calendar versioning](https://calver.org/):
 
 ## Acknowledgements
 
-Thanks to Guillaume Viger and Northwestern University for the invenio-subjects-mesh package which provided the framework for this package and the current README text.
+Thanks to Guillaume Viger and Northwestern University for the invenio-subjects-mesh package which provided the framework for this package and parts of this README text.

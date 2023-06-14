@@ -94,7 +94,7 @@ def test_converter():
                            },
                           {'id': "http://id.worldcat.org/fast/2",
                            'scheme': "FAST-personal",
-                           'subject': "2:Thatcher, Margaret"
+                           'subject': "Thatcher, Margaret"
                            }
                           ]
         for idx, l in enumerate(p):

@@ -12,25 +12,27 @@
 #  check-manifest -u
 
 include .gitignore
-exclude .DS_Store
-recursive-exclude tests .DS_Store
-recursive-exclude invenio_subjects_fast .DS_Store
-include tests/data/*.marcxml.zip
-exclude tests/downloads/*.marcxml.zip
-recursive-include tests .gitkeep
-recursive-include invenio_subjects_fast .gitkeep
-
-# added by check-manifest
 include *.lock
 include *.md
 include *.rst
 include *.sh
 include *.txt
 include Pipfile
-recursive-include invenio_subjects_fast *.py
-recursive-include invenio_subjects_fast *.yaml
-recursive-include tests *.lock
+exclude .DS_Store
+include tests/data/*.marcxml.zip
+exclude tests/downloads/*.marcxml.zip
+recursive-include tests .gitkeep
 recursive-include tests *.py
+recursive-exclude tests .DS_Store
+recursive-exclude tests *.marcxml
+recursive-exclude tests *.jsonl
+recursive-include invenio_subjects_fast .gitkeep
+recursive-include invenio_subjects_fast *.py
+recursive-include invenio_subjects_fast *.jsonl
+recursive-include invenio_subjects_fast *.yaml
+recursive-exclude invenio_subjects_fast .DS_Store
+recursive-exclude invenio_subjects_fast *.marcxml
+recursive-exclude invenio_subjects_fast *.marcxml.zip
 
 # added by check-manifest
 recursive-include tests *.lock

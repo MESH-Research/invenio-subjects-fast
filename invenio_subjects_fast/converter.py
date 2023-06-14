@@ -100,7 +100,7 @@ def convert_to_yaml(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
                     facet_num = label_parent.attrib['tag']
                     label_fields = [l for l in label_parent
                                     if 'code' in l.attrib.keys()
-                                    and l.attrib['code'] in ["a", "b", "c", "d", "x", "z"]]
+                                    and l.attrib['code'] in ["a", "b", "c", "d", "p", "x", "z"]]
                     if len(label_fields) > 1:
                         code_letters = [f.get('code') for f in label_fields]
                         if any(c for c in code_letters if c in ["b", "c", "d", "p"]):

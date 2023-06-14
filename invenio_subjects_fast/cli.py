@@ -8,7 +8,7 @@
 
 import click
 from invenio_subjects_fast.downloader import download_marcxml_files
-from invenio_subjects_fast.converter import convert_to_yaml
+from invenio_subjects_fast.converter import convert_to_jsonl
 from pathlib import Path
 
 """
@@ -36,9 +36,9 @@ def download_marcxml():
 @cli.command("convert")
 def convert_marcxml():
     """
-    Convert the downloaded FAST marcxml files to a yaml vocabulary file
+    Convert the downloaded FAST marcxml files to a jsonl vocabulary file
     """
-    convert_to_yaml(source_dir=Path(__file__).parent / "downloads",
+    convert_to_jsonl(source_dir=Path(__file__).parent / "downloads",
                     target_dir=Path(__file__).parent / "vocabularies")
 
 

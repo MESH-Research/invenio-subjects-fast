@@ -6,7 +6,7 @@
 # modify it under the terms of the MIT License; see LICENSE file for more
 # details.
 
-
+import jsonlines
 from halo import Halo
 from pathlib import Path
 from pprint import pprint
@@ -16,21 +16,26 @@ from typing import Optional
 import xml.etree.ElementTree as ET
 """
 
+File format
+
+Although the current InvenioRDM documentation recommends yaml format for vocabulary files, this module produces jsonl files instead. These are much
+faster for InvenioRDM to read than are yaml files.
+
 Escaping
 
-In the converted yaml file double quotes (") are escaped with a backslash (\"). Single backslashes followed by a letter are also escaped (\\) so that the Invenio importer does not try to interpret the slash and following letter as a control character.
+In the converted jsonl file double quotes (") are escaped with a backslash (\"). Single backslashes followed by a letter are also escaped (\\) so that the Invenio importer does not try to interpret the slash and following letter as a control character.
 """
 
-def convert_to_yaml(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
+def convert_to_jsonl(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
     """
-    Parse a FAST marcxml file and write to an Invenio yaml vocabulary file
+    Parse a FAST marcxml file and write to an Invenio jsonl vocabulary file
 
     :param str source_folder: A string representing the path (absolute
                               or relative to this script file) for the
                               folder holding the marcxml files.
     :param str target_folder: A string representing the path (absolute
                               or relative to this script file) for the
-                              folder where the subjects_fast.yaml file
+                              folder where the subjects_fast.jsonl file
                               exists (or will be created if it does not
                               exist).
     """
@@ -51,9 +56,10 @@ def convert_to_yaml(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
     target_folder = Path(__file__).parent / 'vocabularies' \
         if not target_dir else target_dir
     for idx, source_path in enumerate(source_paths):
-        print(f'\nConverting {slugs[idx]} vocabulary to Invenio yaml format')
-        with open(f'{target_folder}/subjects_fast_{slugs[idx].lower()}.yaml',
-                  "a") as target_file:
+        print(f'\nConverting {slugs[idx]} vocabulary to Invenio jsonl format')
+        with jsonlines.open(f'{target_folder}/subjects_fast_'
+                             '{slugs[idx].lower()}.jsonl',
+                            "a") as target_file:
             with open(source_path, "rb") as source_file:
                 # print('\nParsing FAST marcxml file (This may take a while!)')
                 spinner = Halo(text='    parsing FAST marcxml file (This may take a while!)', spinner='dots')
@@ -62,7 +68,7 @@ def convert_to_yaml(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
                 spinner.stop()
                 print(f'  done parsing {source_path.split("/")[-1]}')
 
-                print(f'  converting contents to yaml')
+                print(f'  converting contents to jsonl')
                 root = parsed.getroot()
 
                 records = root.findall(f'./{mx}record')
@@ -117,10 +123,14 @@ def convert_to_yaml(source_dir:Optional[str], target_dir:Optional[str]) -> bool:
                     # escape quotation marks
                     label = label.replace('"', '\\"')
                     label = re.sub(r'\\([a-z A-Z])', r'\\\\1', label)
-                    full_label = f'{id_num}:{label}'
-                    myline = f'- id: "{uri}"\n  scheme: FAST-{facets[facet_num]}\n  subject: "{full_label}"\n'
+                    # full_label = f'{label}--{id_num}'
+                    # myline = f'- id: "{uri}"\n  scheme: FAST-{facets[facet_num]}\n  subject: "{full_label}"\n'
+                    myline = {'id': uri,
+                              'scheme': f'FAST-{facets[facet_num]}',
+                              'subject': f'{label}--{id_num}'
+                    }
                     target_file.write(myline)
-                print(f'finished writing this facet to its yaml file: '
-                      f'subjects_fast_{slugs[idx].lower()}.yaml')
+                print(f'finished writing this facet to its jsonl file: '
+                      f'subjects_fast_{slugs[idx].lower()}.jsonl')
     print(f'All done! All FAST facets have been converted')
     return(True)

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a04955bfddb0326e8d87782319fd390b0875cc80ab23bae29f6d06b1daddc189"
+            "sha256": "4b8bf7028ec5e9e0f5e6af53935c1db59180b8834bcc3761b3ced7fcca3177e3"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "attrs": {
+            "hashes": [
+                "sha256:1f28b4522cdc2fb4256ac1a020c78acf9cba2c6b461ccd2c126f3aa8e8335d04",
+                "sha256:6279836d581513a26f1bf235f9acd333bc9115683f14f7e8fae46c98fc50e015"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==23.1.0"
+        },
         "certifi": {
             "hashes": [
                 "sha256:0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7",
@@ -140,6 +148,14 @@
         "invenio-subjects-fast": {
             "editable": true,
             "path": "."
+        },
+        "jsonlines": {
+            "hashes": [
+                "sha256:2579cb488d96f815b0eb81629e3e6b0332da0962a18fa3532958f7ba14a5c37f",
+                "sha256:632f5e38f93dfcb1ac8c4e09780b92af3a55f38f26e7c47ae85109d420b6ad39"
+            ],
+            "index": "pypi",
+            "version": "==3.1.0"
         },
         "log-symbols": {
             "hashes": [

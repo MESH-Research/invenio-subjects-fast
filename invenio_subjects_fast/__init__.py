@@ -9,4 +9,4 @@
 """FAST subject terms for InvenioRDM."""
 
 
-__version__ = '2023.06.17'
+__version__ = '2023.07.05'

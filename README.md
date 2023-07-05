@@ -4,12 +4,13 @@ FAST subject vocabulary for the InvenioRDM repository system.
 
 Install this extension to use the FAST (Faceted Application of Subject Terminology) subject vocabulary in your InvenioRDM instance. FAST is developed by OCLC Research (https://www.oclc.org/research/areas/data-science/fast.html) and adapts the Library of Congress Subject Headings to use a faceted structure, allowing flexible and efficient tagging and searching. FAST is made available under the Open Data Commons Attribution License (https://www.oclc.org/research/areas/data-science/fast/odcby.html).
 
-Some of the facets in FAST are extremely large. So this package provides the nine facets of the FAST vocabulary in Invenio as nine separate subject vocabularies. Each term includes the id number and the human readable (English) label, separated by a colon.
+Some of the facets in FAST are extremely large. (Well over a million terms.) So this package provides the nine facets of the FAST vocabulary in Invenio as nine separate subject vocabularies. Each term's id is the full URL for the term (e.g., http://id.worldcat.org/fast/1204165).
+
+The invenio-subjects-fast package comes with a preconfigured set of jsonl files ready to be loaded as fixtures into InvenioRDM. It also includes scripts to download the raw .marcxml files from the FAST project and convert them into jsonl vocabulary files. This download and conversion process will only be necessary, though, when the FAST terms are updated.
 
 ## Installation
 
-The invenio-subjects-fast package comes with a preconfigured set of
-From your instance directory:
+From your InvenioRDM instance directory:
 
     pipenv install invenio-subjects-fast
 

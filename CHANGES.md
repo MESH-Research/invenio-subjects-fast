@@ -1,5 +1,13 @@
 # Changes
 
+Version 2026.07.24
+
+- Add datastream configuration file to specify the jsonl reader when
+  invenio-vocabularies ingests the data files.
+- Update the README with installation instructions that include the use of the
+  `--filepath` flag to use the custom datastream config.
+- Remove vestigial `INSTALL.rst` (install docs live in `README.md` only).
+
 Version 2026.07.23
 
 - Switch packaging and local development from Pipenv to uv (`.venv`, `uv.lock`,

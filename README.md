@@ -75,10 +75,9 @@ FAST source files for yourself.
 **As of 23 July 2026**, automated downloads from the OCLC ResearchWorks URL are
 blocked (Cloudflare returns HTTP 403 to non-browser clients). Obtain the facet
 zip files manually from
-https://www.oclc.org/research/areas/data-science/fast/download.html
-and place the extracted `.marcxml` files (or the downloaded `.marcxml.zip`
-archives, then unzip them) in this package's `invenio_subjects_fast/downloads/`
-folder.
+https://www.oclc.org/research/areas/data-science/fast/download.html and place
+the extracted `.marcxml` files (or the downloaded `.marcxml.zip` archives, then
+unzip them) in this package's `invenio_subjects_fast/downloads/` folder.
 
 The `download` CLI may still work if OCLC lifts that restriction:
 
@@ -100,11 +99,21 @@ all facets.
 ## Loading updated vocabularies into InvenioRDM
 
 After installing a newer release of this package (or staging corrected jsonl
-files), refresh existing subject terms with:
+files), refresh existing subject terms with `invenio vocabularies update`.
+
+Invenio’s stock subjects CLI defaults to a **YAML** reader. FAST data is
+**JSONL**, so you must pass this package’s datastream config as `--filepath`
+(shipped as `invenio_subjects_fast/vocabularies/subjects_datastream.yaml`) and
+the facet file as `--origin`:
 
 ```bash
-invenio vocabularies update -v subjects --origin /path/to/subjects_fast_<facet>.jsonl
+invenio vocabularies update -v subjects \
+  --filepath "$(python -c 'from importlib.resources import files; print(files("invenio_subjects_fast") / "vocabularies" / "subjects_datastream.yaml")')" \
+  --origin "$(python -c 'from importlib.resources import files; print(files("invenio_subjects_fast") / "vocabularies" / "subjects_fast_<facet>.jsonl")')"
 ```
+
+Replace `<facet>` with the facet slug (e.g. `formgenre`, `topical`). Repeat for
+each facet file you need to refresh.
 
 If existing terms were modified (same subject `id`, changed fields such as label
 or `scheme`), rebuild record indexes afterward (for example
@@ -127,8 +136,8 @@ uv sync
 ```
 
 Then from the repository root, manually download the FAST marcxml zip files from
-https://www.oclc.org/research/areas/data-science/fast/download.html
-into `invenio_subjects_fast/downloads/` (see the note under
+https://www.oclc.org/research/areas/data-science/fast/download.html into
+`invenio_subjects_fast/downloads/` (see the note under
 [Updating the vocabulary](#updating-the-vocabulary)), then run
 
 ```bash

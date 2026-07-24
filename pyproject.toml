@@ -1,52 +1,55 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "invenio-subjects-fast"
-version = "2023.07.05"
+version = "2026.07.23"
 description = "Provides the FAST faceted subject vocabulary for InvenioRDM"
 readme = "README.md"
 authors = [{ name = "MESH Research", email = "scottia4@msu.edu" }]
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+keywords = ["invenio", "inveniordm", "subjects", "FAST"]
 classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Environment :: Web Environment",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-    "Topic :: Software Development :: Libraries :: Python Modules"
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-keywords = ["invenio", "inveniordm", "subjects", "FAST"]
 dependencies = [
-    "click>=7.0"
+    "click>=7.0",
+    "halo>=0.0.31",
+    "jsonlines",
+    "requests>=2.25.1",
+    "tqdm>=4.65.0",
 ]
-requires-python = ">=3.9"
 
 [project.optional-dependencies]
+# Local development / packaging / test tools
 dev = [
+    "build",
     "check-manifest",
-    "halo~=0.0.31",
-    "pip-tools",
     "pytest>=7.3.2",
-    "pytest-runner",
+    "pytest-ruff>=0.1",
     "pyyaml>=5.4.1",
-    "requests>=2.25.1",
     "responses>=0.23.1",
-    "tqdm>=4.65.0"
+    "ruff>=0.3",
+    "twine",
+    "wheel",
 ]
-
 
 [project.urls]
 Homepage = "https://github.com/MESH-Research/invenio-subjects-fast"
-
-
-[tool.pytest.ini_options]
-addopts = "--doctest-glob='*.rst' --doctest-modules"
-testpaths = [ "tests", "invenio_subjects_fast" ]
+Repository = "https://github.com/MESH-Research/invenio-subjects-fast"
 
 [project.scripts]
 invenio-subjects-fast = "invenio_subjects_fast.cli:cli"
@@ -54,3 +57,78 @@ invenio-subjects-fast = "invenio_subjects_fast.cli:cli"
 [project.entry-points."invenio_rdm_records.fixtures"]
 invenio_subjects_fast = "invenio_subjects_fast.vocabularies"
 
+[dependency-groups]
+dev = [
+    "build",
+    "check-manifest",
+    "pytest>=7.3.2",
+    "pytest-ruff>=0.1",
+    "pyyaml>=5.4.1",
+    "responses>=0.23.1",
+    "ruff>=0.3",
+    "twine",
+    "wheel",
+]
+
+[tool.setuptools.packages.find]
+include = ["invenio_subjects_fast", "invenio_subjects_fast.*"]
+
+[tool.setuptools.package-data]
+invenio_subjects_fast = [
+    "vocabularies/*.jsonl",
+    "vocabularies/*.yaml",
+    "vocabularies/.gitkeep",
+    "downloads/.gitkeep",
+]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 88
+exclude = [
+    ".venv",
+    "invenio_subjects_fast/downloads",
+    "invenio_subjects_fast/vocabularies",
+    "tests/data",
+    "tests/downloads",
+    "tests/vocabularies",
+]
+lint.select = ["B", "D", "DOC", "E", "F", "I", "UP"]
+lint.ignore = [
+    "D412",  # Missing blank line before closing docstring
+    "W1",  # Indentation warnings
+    "W2",  # Whitespace warnings
+    "W3",  # Blank line warnings
+]
+lint.per-file-ignores."__init__.py" = ["D104", "E402", "F401"]
+lint.per-file-ignores."tests/**" = ["D", "DOC"]
+lint.isort.known-first-party = ["invenio_subjects_fast", "tests"]
+lint.pydocstyle.convention = "google"
+lint.preview = true
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+addopts = """
+--ruff --doctest-modules
+--log-cli-level=DEBUG
+--ignore=invenio_subjects_fast/downloads
+--ignore=invenio_subjects_fast/vocabularies
+--ignore=tests/data
+--ignore=tests/downloads
+--ignore=tests/vocabularies
+"""
+testpaths = ["tests", "invenio_subjects_fast"]
+log_cli_level = "DEBUG"
+
+[tool.check-manifest]
+ignore = [
+    ".*-requirements.txt",
+    "*.bin",
+    "*.gitkeep",
+    ".venv/**",
+    "uv.lock",
+]

@@ -1,46 +1,52 @@
-# -*- coding: utf-8 -*-
+# Copyright (C) 2023-2026 MESH Research
 #
-# Copyright (C) 2023 MESH Research
-#
-# invenio-subjects-fast is free software; you can redistribute it and/or
-# modify it under the terms of the MIT License; see LICENSE file for more
-# details.
+# SPDX-License-Identifier: MIT
 
-import click
-from invenio_subjects_fast.downloader import download_marcxml_files
-from invenio_subjects_fast.converter import convert_to_jsonl
+"""CLI to convert FAST marcxml files to InvenioRDM vocabulary files."""
+
 from pathlib import Path
 
-"""
-A Script and command line interface for producing an InvenioRDM vocabulary file from the FAST subject vocabulary marcxml files.
+import click
 
-Setup
+from invenio_subjects_fast.converter import convert_to_jsonl
+from invenio_subjects_fast.downloader import download_marcxml_files
 
-This script
-
-"""
 
 @click.group()
 def cli():
+    """Parent command group for the invenio_subjects_fast CLI."""
     pass
 
 
 @cli.command("download")
-def download_marcxml():
-    """
-    Download the FAST vocabulary marcxml files.
-    """
-    download_marcxml_files()
+@click.option(
+    "-f",
+    "--facet",
+    multiple=True,
+    help="FAST facet to download (repeatable). Omit to download all.",
+)
+def download_marcxml(facet):
+    """Download the FAST vocabulary marcxml files."""
+    download_marcxml_files(
+        download_dir=Path(__file__).parent / "downloads",
+        facets=facet or None,
+    )
 
 
 @cli.command("convert")
-def convert_marcxml():
-    """
-    Convert the downloaded FAST marcxml files to a jsonl vocabulary file
-    """
-    convert_to_jsonl(source_dir=Path(__file__).parent / "downloads",
-                    target_dir=Path(__file__).parent / "vocabularies")
-
+@click.option(
+    "-f",
+    "--facet",
+    multiple=True,
+    help="FAST facet to convert (repeatable). Omit to convert all.",
+)
+def convert_marcxml(facet):
+    """Convert the downloaded FAST marcxml files to a jsonl vocabulary file."""
+    convert_to_jsonl(
+        source_dir=Path(__file__).parent / "downloads",
+        target_dir=Path(__file__).parent / "vocabularies",
+        facets=facet or None,
+    )
 
 
 if __name__ == "__main__":

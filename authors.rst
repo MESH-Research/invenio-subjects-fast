@@ -1,9 +1,6 @@
 ..
-    Copyright (C) 2023 MESH Research
-
-    invenio-subjects-fast is free software; you can redistribute it and/or
-    modify it under the terms of the MIT License; see LICENSE file for more
-    details.
+    Copyright (C) 2023-2026 MESH Research
+    SPDX-License-Identifier: MIT
 
 Authors
 =======

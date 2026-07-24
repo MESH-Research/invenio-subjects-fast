@@ -1,17 +1,13 @@
-# -*- coding: utf-8 -*-
+# Copyright (C) 2023-2026 MESH Research
 #
-# Copyright (C) 2023 MESH Research
-#
-# invenio-subjects-fast is free software; you can redistribute it and/or
-# modify it under the terms of the MIT License; see LICENSE file for more
-# details.
+# SPDX-License-Identifier: MIT
 
 """Test subjects extension conforms to subjects extension interface."""
 
-import yaml
+from importlib.metadata import entry_points
 from pathlib import Path
 
-import pkg_resources
+import yaml
 
 from invenio_subjects_fast import __version__
 
@@ -24,15 +20,15 @@ def test_version():
 def test_vocabularies_yaml():
     """Test vocabularies.yaml structure."""
     extensions = [
-        ep.load() for ep in
-        pkg_resources.iter_entry_points('invenio_rdm_records.fixtures')
+        ep.load() for ep in entry_points(group="invenio_rdm_records.fixtures")
     ]
 
     assert len(extensions) == 1
 
-    module = extensions[0]
     directory = Path(__file__).parent.parent
-    filepath = directory / "invenio_subjects_fast" / "vocabularies" / "vocabularies.yaml"
+    filepath = (
+        directory / "invenio_subjects_fast" / "vocabularies" / "vocabularies.yaml"
+    )
 
     with open(filepath) as f:
         data = yaml.safe_load(f)

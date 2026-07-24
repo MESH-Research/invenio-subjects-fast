@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
+# Copyright (C) 2023-2026 MESH Research
 #
-# Copyright (C) 2023 MESH Research
-#
-# invenio-subjects-fast is free software; you can redistribute it and/or
-# modify it under the terms of the MIT License; see LICENSE file for more
-# details.
+# SPDX-License-Identifier: MIT
 
 """FAST subject terms for InvenioRDM."""
 
-
-__version__ = '2023.07.05'
+__version__ = "2026.07.23"

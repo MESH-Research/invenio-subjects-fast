@@ -4,23 +4,20 @@ requires = ["setuptools>=61", "wheel"]
 
 [project]
 name = "invenio-subjects-fast"
-version = "2026.07.24"
+version = "2026.09.23"
 description = "Provides the FAST faceted subject vocabulary for InvenioRDM"
 readme = "README.md"
 keywords = ["FAST", "invenio", "inveniordm", "subjects"]
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "MESH Research", email = "scottia4@msu.edu" }]
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 classifiers = [
   "Environment :: Web Environment",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
@@ -31,6 +28,7 @@ dependencies = [
   "click>=7",
   "halo>=0.0.31",
   "jsonlines",
+  "pymarc>=5.3.1",
   "requests>=2.25.1",
   "tqdm>=4.65",
 ]
@@ -38,29 +36,48 @@ dependencies = [
 optional-dependencies.dev = [
   "build",
   "check-manifest",
+  "coverage",
+  "invenio-app>=2,<3",
+  "invenio-jobs>=3,<5",
+  "invenio-search[opensearch2]>=3.0.0,<4.0.0",
   "pytest>=7.3.2",
+  "pytest-cov>=6.2.1",
+  "pytest-invenio>=3.3,<4",
   "pytest-ruff>=0.1",
   "pyyaml>=5.4.1",
-  "responses>=0.23.1",
+  "requests-mock>=1.11",
   "ruff>=0.3",
+  "setuptools>=61,<82",
   "twine",
+  "ty",
   "wheel",
 ]
 urls.Homepage = "https://github.com/MESH-Research/invenio-subjects-fast"
 urls.Repository = "https://github.com/MESH-Research/invenio-subjects-fast"
 scripts.invenio-subjects-fast = "invenio_subjects_fast.cli:cli"
+entry-points."flask.commands".subjects_fast = "invenio_subjects_fast.cli:cli"
 entry-points."invenio_rdm_records.fixtures".invenio_subjects_fast = "invenio_subjects_fast.vocabularies"
+entry-points."invenio_celery.tasks".invenio_subjects_fast = "invenio_subjects_fast.tasks"
+entry-points."invenio_jobs.jobs".process_fast_subject_updates = "invenio_subjects_fast.jobs:ProcessFastSubjectUpdatesJob"
 
 [dependency-groups]
 dev = [
   "build",
   "check-manifest",
+  "coverage",
+  "invenio-app>=2,<3",
+  "invenio-jobs>=3,<5",
+  "invenio-search[opensearch2]>=3.0.0,<4.0.0",
   "pytest>=7.3.2",
+  "pytest-cov>=6.2.1",
+  "pytest-invenio>=3.3,<4",
   "pytest-ruff>=0.1",
   "pyyaml>=5.4.1",
-  "responses>=0.23.1",
+  "requests-mock>=1.11",
   "ruff>=0.3",
+  "setuptools>=61,<82",
   "twine",
+  "ty",
   "wheel",
 ]
 
@@ -69,7 +86,10 @@ package-data.invenio_subjects_fast = [
   "vocabularies/*.jsonl",
   "vocabularies/*.yaml",
   "vocabularies/.gitkeep",
+  "vocabularies/updates/.gitkeep",
   "downloads/.gitkeep",
+  "downloads/updates/.gitkeep",
+  "downloads/updates/processed/.gitkeep",
 ]
 packages.find.include = ["invenio_subjects_fast", "invenio_subjects_fast.*"]
 
@@ -83,9 +103,9 @@ exclude = [
   ".venv",
   "invenio_subjects_fast/downloads",
   "invenio_subjects_fast/vocabularies",
+  "invenio_subjects_fast/jobs.py",
+  "invenio_subjects_fast/tasks.py",
   "tests/data",
-  "tests/downloads",
-  "tests/vocabularies",
 ]
 format.quote-style = "double"
 lint.select = ["B", "D", "DOC", "E", "F", "I", "UP"]
@@ -101,6 +121,22 @@ lint.isort.known-first-party = ["invenio_subjects_fast", "tests"]
 lint.pydocstyle.convention = "google"
 lint.preview = true
 
+[tool.ty]
+analysis = {}
+# Type checking with ty (replaces mypy). Mirrors KCWorks [tool.ty] settings;
+# paths adapted to this package's layout.
+environment.python-version = "3.14"
+rules.redundant-cast = "warn"
+rules.unused-ignore-comment = "ignore"
+rules.unused-type-ignore-comment = "ignore"
+rules.unresolved-import = "ignore"
+rules.unresolved-global = "ignore"
+src.exclude = [
+  "tests",
+  "invenio_subjects_fast/downloads",
+  "invenio_subjects_fast/vocabularies",
+]
+
 [tool.check-manifest]
 ignore = [".*-requirements.txt", "*.bin", "*.gitkeep", ".venv/**", "uv.lock"]
 
@@ -110,9 +146,18 @@ ini_options.addopts = """
 --log-cli-level=DEBUG
 --ignore=invenio_subjects_fast/downloads
 --ignore=invenio_subjects_fast/vocabularies
+--ignore=invenio_subjects_fast/jobs.py
+--ignore=invenio_subjects_fast/tasks.py
 --ignore=tests/data
---ignore=tests/downloads
---ignore=tests/vocabularies
+--cov=invenio_subjects_fast
+--cov-report=term-missing
 """
 ini_options.testpaths = ["tests", "invenio_subjects_fast"]
+ini_options.pythonpath = ["tests"]
 ini_options.log_cli_level = "DEBUG"
+
+[tool.coverage.run]
+omit = [
+  "invenio_subjects_fast/downloads/*",
+  "invenio_subjects_fast/vocabularies/*",
+]

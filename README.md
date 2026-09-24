@@ -120,6 +120,110 @@ or `scheme`), rebuild record indexes afterward (for example
 `invenio rdm-records rebuild-index`) so denormalized subject data on records
 stays consistent. See your instance's operator documentation for full steps.
 
+## Updating from FAST change files (.mrc)
+
+OCLC publishes more frequent **change files** as ISO MARC (`.mrc`) on
+https://fast.oclc.org/fastChanges/ (separate from the full-facet MARCXML dumps).
+
+### Download new change files
+
+```bash
+uv run invenio subjects_fast download-updates
+# optional: --since 2026-01-01  --download-dir /path/to/dir  --force
+```
+
+This scrapes the FAST updates index and downloads any `FASTChanges*.mrc` /
+`FORMChanges*.mrc` files not already present under the change-file workdir (or
+that directory's `processed/` subfolder). Workdir precedence: `--download-dir`,
+else Flask config `SUBJECTS_FAST_UPDATES_PATH`, else
+`<instance_path>/app_data/vocabularies/fast/`. Unlike the full-facet
+ResearchWorks zips, these URLs are stable and suitable for scheduled clients.
+Downloads wait 10s between files and retry on HTTP 429 using `Retry-After`
+(capped).
+
+### Download, convert, and optionally ingest (full pipeline)
+
+```bash
+# Via Invenio (preferred; provides app context)
+uv run invenio subjects_fast process-updates --ingest
+# optional: --since 2026-01-01  --download-dir /path/to/dir  --force
+
+# Or console script with an explicit workdir
+uv run invenio-subjects-fast process-updates --download-dir /path/to/dir
+```
+
+Same orchestrator as the scheduled Invenio job (`process_fast_updates`). Without
+`--ingest`, writes deltas under `<download-dir>/deltas/` and moves `.mrc` files
+to `processed/`. `--ingest` upserts into the subjects vocabulary and requires
+an Invenio application context; `.mrc` files move to `processed/` only when
+ingest finishes with no entry errors (otherwise they stay for retry). Workdir:
+`--download-dir`, else `SUBJECTS_FAST_UPDATES_PATH`, else
+`<instance_path>/app_data/vocabularies/fast/`.
+
+### Convert to JSONL
+
+```bash
+uv run invenio-subjects-fast convert-updates path/to/FAST_change_file.mrc
+```
+
+By default this:
+
+- writes **delta** files under `invenio_subjects_fast/vocabularies/updates/` as
+  `subjects_fast_<scheme>.updates.jsonl` (changed terms only), and
+- **merges** the same rows into the full `subjects_fast_<scheme>.jsonl` files.
+
+Options:
+
+- `--no-merge` — only write deltas
+- `--no-delta` — only merge into full facet files
+- `--vocab-dir` / `--delta-dir` — override output locations
+- `-f` / `--facet` — limit to selected facets
+
+Deprecated, obsolete, split, or deleted authority records are **not removed**.
+Their labels get a ` (deprecated)` suffix and `tags: ["unlisted"]` so deposit
+autocomplete hides them while existing records can still resolve the id.
+
+### Loading deltas into an InvenioRDM instance
+
+After `convert-updates`, refresh only the changed terms (repeat per facet delta
+file you need):
+
+```bash
+invenio vocabularies update -v subjects \
+  --filepath "$(python -c 'from importlib.resources import files; print(files("invenio_subjects_fast") / "vocabularies" / "subjects_datastream.yaml")')" \
+  --origin /path/to/invenio_subjects_fast/vocabularies/updates/subjects_fast_<scheme>.updates.jsonl
+```
+
+Use a filesystem path for `--origin` that points at the delta file you just
+wrote (package data does not ship update deltas). For a full reinstall of a
+facet after merging into the packaged JSONL and releasing the package, continue
+to use `invenio vocabularies update` (or `import` on a fresh instance) with the
+full `subjects_fast_<scheme>.jsonl` as `--origin` as described above.
+
+### Scheduled InvenioRDM job
+
+This package registers an invenio-jobs task id `process_fast_subject_updates`
+(Celery task + JobType entry points). In an InvenioRDM instance that installs
+this package, schedule it with your jobs CLI, for example:
+
+```bash
+invenio kcworks-jobs upsert process_fast_subject_updates \
+  --title "Update FAST subjects" \
+  --schedule "crontab:minute=0,hour=2,day_of_week=3" \
+  --queue celery
+```
+
+The task downloads unseen change files into the change-file workdir
+(`SUBJECTS_FAST_UPDATES_PATH`, or
+`<instance_path>/app_data/vocabularies/fast/` when unset), converts deltas,
+upserts subjects (`update=True`), and moves `.mrc` files to `processed/` only
+after a clean ingest (entry errors leave files in place for the next run).
+The same pipeline is `process_fast_updates` (CLI:
+`invenio subjects_fast process-updates`). When no `since` is supplied,
+`download_updates` sets the lower bound from (1) the newest date in
+local `FASTChanges*` / `FORMChanges*` filenames, else (2) the newest mtime
+among package `downloads/` full-facet dump files, else (3) a 180-day lookback.
+
 ## Updating this package
 
 The FAST vocabulary is updated every 6 months. When a new version of the FAST

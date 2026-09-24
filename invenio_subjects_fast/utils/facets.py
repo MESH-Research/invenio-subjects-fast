@@ -25,8 +25,8 @@ def marcxml_filename(facet: FastFacet) -> str:
 def resolve_facets(facets: Optional[Iterable[str]] = None) -> list[FastFacet]:
     """Return facets to process, optionally filtered by name.
 
-    Names are matched case-insensitively against each facet's ``slug`` (e.g.
-    ``formgenre`` or ``FormGenre``).
+    Names are matched case-insensitively against each facet's `slug` (e.g.
+    `formgenre` or `FormGenre`).
 
     Args:
         facets: Optional iterable of facet names. Omit or empty to use all.

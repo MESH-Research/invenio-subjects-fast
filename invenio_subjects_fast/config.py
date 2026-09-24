@@ -5,17 +5,21 @@
 """Shared configuration for FAST download and convert."""
 
 from collections.abc import Sequence
+from pathlib import Path
 from typing import NamedTuple
+
+# Package install root (`invenio_subjects_fast/`), not a nested subpackage.
+PACKAGE_ROOT = Path(__file__).resolve().parent
 
 
 class FastFacet(NamedTuple):
     """One FAST vocabulary facet.
 
     Attributes:
-        slug: Filename stem after ``FAST`` (e.g. ``FormGenre`` →
-            ``FASTFormGenre.marcxml.zip``).
-        scheme: Scheme suffix used in vocabulary rows (e.g. ``formgenre`` →
-            ``FAST-formgenre``).
+        slug: Filename stem after `FAST` (e.g. `FormGenre` →
+            `FASTFormGenre.marcxml.zip`).
+        scheme: Scheme suffix used in vocabulary rows (e.g. `formgenre` →
+            `FAST-formgenre`).
         marc_tag: MARC datafield tag that carries the preferred label.
     """
 
@@ -47,6 +51,25 @@ FAST_DOWNLOAD_USER_AGENT = (
     "Chrome/131.0.0.0 Safari/537.36"
 )
 
+# Incremental change files (ISO MARC .mrc), separate from full facet dumps.
+# HTML listing of available FASTChanges*.mrc / FORMChanges*.mrc files.
+FAST_UPDATES_INDEX_URL = "https://fast.oclc.org/fastChanges/"
+FAST_UPDATES_REFERER = FAST_UPDATES_INDEX_URL
+
 DEFAULT_DOWNLOAD_ATTEMPTS = 3
 DEFAULT_RETRY_BACKOFF_SECONDS = 2
-DEFAULT_INTER_REQUEST_DELAY_SECONDS = 3
+# Pause between successive file downloads (full dumps and change files).
+DEFAULT_INTER_REQUEST_DELAY_SECONDS = 10
+# Cap on Retry-After waits so a runaway header cannot block forever.
+DEFAULT_RETRY_AFTER_MAX_SECONDS = 300
+
+# Flask / Invenio config key (set in invenio.cfg or env as
+# INVENIO_SUBJECTS_FAST_UPDATES_PATH). When unset, the change-file workdir
+# falls back to ``<instance_path>/app_data/vocabularies/fast/``.
+SUBJECTS_FAST_UPDATES_PATH = None
+"""Directory for FAST `.mrc` change files, `processed/`, and `deltas/`.
+
+Override via Flask config `SUBJECTS_FAST_UPDATES_PATH`, or pass an explicit
+path to the CLI / task. When both are unset, uses
+`<instance_path>/app_data/vocabularies/fast/`.
+"""

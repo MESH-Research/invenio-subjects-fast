@@ -49,11 +49,6 @@ coverage.xml
 
 # Other pytest files
 .pytest_cache
-tests/vocabularies/*
-!tests/vocabularies/.gitkeep
-tests/downloads/*.marcxml
-tests/downloads/*.marcxml.zip
-!tests/downloads/.gitkeep
 
 # Translations
 *.mo
@@ -74,6 +69,16 @@ target/
 # Only keep the downloads folder
 invenio_subjects_fast/downloads/*
 !invenio_subjects_fast/downloads/.gitkeep
+!invenio_subjects_fast/downloads/updates/
+invenio_subjects_fast/downloads/updates/*
+!invenio_subjects_fast/downloads/updates/.gitkeep
+!invenio_subjects_fast/downloads/updates/processed/
+invenio_subjects_fast/downloads/updates/processed/*
+!invenio_subjects_fast/downloads/updates/processed/.gitkeep
+
+# Do not ship or commit generated update deltas
+invenio_subjects_fast/vocabularies/updates/*
+!invenio_subjects_fast/vocabularies/updates/.gitkeep
 
 # Macos finder files
 .DS_Store
